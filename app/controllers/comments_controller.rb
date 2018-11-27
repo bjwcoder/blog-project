@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to post_path (id: @comment.post_id)}
+        format.html { redirect_to post_path(id: @comment.post_id)}
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1.json
   def update
     respond_to do |format|
-      if @comment.save
+      
       if @comment.update(comment_params)
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
